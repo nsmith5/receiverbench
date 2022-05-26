@@ -76,6 +76,7 @@ func (p *principal2) Embed(ctx context.Context, cert *x509.Certificate) error {
 }
 
 func BenchmarkPrincipal1Name(b *testing.B) {
+	b.ReportAllocs()
 	p := principal1{
 		subject: "foo",
 		issuer:  "https://example.com",
@@ -87,6 +88,7 @@ func BenchmarkPrincipal1Name(b *testing.B) {
 }
 
 func BenchmarkPrincipal1Embed(b *testing.B) {
+	b.ReportAllocs()
 	p := principal1{
 		subject: "foo",
 		issuer:  "https://example.com",
@@ -98,6 +100,7 @@ func BenchmarkPrincipal1Embed(b *testing.B) {
 }
 
 func BenchmarkPrincipal2Name(b *testing.B) {
+	b.ReportAllocs()
 	p := principal2{
 		subject: "foo",
 		issuer:  "https://example.com",
@@ -109,6 +112,7 @@ func BenchmarkPrincipal2Name(b *testing.B) {
 }
 
 func BenchmarkPrincipal2Embed(b *testing.B) {
+	b.ReportAllocs()
 	p := principal2{
 		subject: "foo",
 		issuer:  "https://example.com",
